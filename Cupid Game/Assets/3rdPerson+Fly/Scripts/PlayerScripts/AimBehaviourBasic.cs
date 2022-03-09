@@ -26,12 +26,18 @@ public class AimBehaviourBasic : GenericBehaviour
 	// Update is used to set features regardless the active behaviour.
 	void Update ()
 	{
-
+		if (Input.GetKeyDown(KeyCode.H))
+		{
+			//Destroy(clone);
+			this.gameObject.SetActive(true);
+		}
+		//Debug.Log(playerCamera.transform.rotation);
 		if (Input.GetMouseButtonDown(0))
 		{
 			//Debug.Log("Schiet");
 			this.gameObject.SetActive(false);
-			Instantiate(arrowPrefab, new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z), Quaternion.Euler(playerCamera.transform.rotation.x, playerCamera.transform.rotation.y + 90, playerCamera.transform.rotation.z));
+			GameObject clone = Instantiate(arrowPrefab, new Vector3(this.transform.position.x, this.transform.position.y + 1, this.transform.position.z), Quaternion.LookRotation(playerCamera.transform.forward, Vector3.up));
+			//Destroy(clone);
 		}
 
 		// Activate/deactivate aim by input.

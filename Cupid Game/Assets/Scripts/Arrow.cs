@@ -34,6 +34,7 @@ public class Arrow : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.Locked;
         rigidbody = GetComponent<Rigidbody>();
+        //transform.rotation = Quaternion.Euler(-90, 0, 0);
 
         // Set target direction to the camera's initial orientation.
         targetDirection = transform.localRotation.eulerAngles;
