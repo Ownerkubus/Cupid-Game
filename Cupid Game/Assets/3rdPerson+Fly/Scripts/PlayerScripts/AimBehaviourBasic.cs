@@ -58,8 +58,8 @@ public class AimBehaviourBasic : GenericBehaviour
 		behaviourManager.GetAnim.SetBool (aimBool, aim);
 	}
 
-	// Co-rountine to start aiming mode with delay.
-	private IEnumerator ToggleAimOn()
+    // Co-rountine to start aiming mode with delay.
+    private IEnumerator ToggleAimOn()
 	{
 		yield return new WaitForSeconds(0.05f);
 		// Aiming is not possible.

@@ -93,4 +93,13 @@ public class Arrow : MonoBehaviour
             transform.localRotation *= yRotation;
         }
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.tag == "Building")
+        {
+            Destroy(this.gameObject);
+            Debug.Log("Collision");
+        }
+    }
 }
